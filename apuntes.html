@@ -1,0 +1,78 @@
+<!-- APUNTES GIT Y GITHUB
+
+CONCEPTOS GENERALES
+Git es un sistema de control de versiones que permite guardar el historial de cambios de un proyecto. GitHub es un repositorio remoto donde se alojan los proyectos para compartirlos y colaborar. Un repositorio es la carpeta que contiene los archivos y el historial. Un commit es una confirmación de cambios que guarda una versión del proyecto. Una rama es una línea de trabajo independiente del resto.
+
+FLUJO BASICO DE TRABAJO
+El flujo correcto de trabajo es siempre el mismo: modificar archivos, verificar el estado, preparar los cambios, confirmar los cambios y subirlos al repositorio remoto. Guardar un archivo en VS Code no lo sube a GitHub, siempre es necesario completar todo el flujo.
+
+Comandos usados en el flujo básico
+git status
+git add .
+git commit -m "mensaje descriptivo"
+git push
+
+BORRAR O DESHACER CAMBIOS
+Git permite deshacer cambios según el momento en el que se encuentre el archivo dentro del flujo.
+
+Caso 1: antes del add. El archivo fue modificado pero todavía no se agregó al staging, por lo que el cambio se puede descartar directamente.
+
+Comandos usados
+git restore nombre_archivo
+git restore .
+
+Caso 2: después del add pero sin commit. El archivo ya está en staging, primero hay que quitarlo del staging y luego, si se desea, descartar el cambio del archivo.
+
+Comandos usados
+git restore --staged nombre_archivo
+git restore nombre_archivo
+
+Caso 3: después del commit. El commit ya forma parte del historial del repositorio. La forma segura de deshacerlo es creando un nuevo commit que revierta el anterior.
+
+Comando usado
+git revert hash_del_commit
+
+RAMAS
+Las ramas permiten trabajar en funcionalidades o pruebas sin afectar la rama principal. La rama activa es aquella donde se registran los cambios y commits.
+
+Comandos para trabajar con ramas
+git branch
+git switch develop
+git checkout develop
+git switch -c feature-login
+
+CAMBIO DE RAMA
+Antes de modificar archivos o confirmar cambios siempre es importante verificar en qué rama se está trabajando. Cambiar de rama no mezcla automáticamente los cambios, solo cambia el contexto de trabajo.
+
+Comando de verificación
+git branch
+
+MERGE DE RAMAS
+El merge se utiliza para traer los cambios de una rama a otra. Regla fundamental: siempre hay que estar parado en la rama donde se quieren guardar los cambios antes de ejecutar el merge.
+
+Ejemplo: traer cambios de develop_prueba a feature-login.
+
+Comandos usados
+git switch feature-login
+git merge develop_prueba
+git push
+
+SUBIR RAMAS A GITHUB
+Cuando una rama se sube por primera vez al repositorio remoto se debe vincular con GitHub. Esto permite que luego se pueda usar push sin parámetros adicionales.
+
+Comando usado la primera vez
+git push -u origin develop
+
+Luego solo es necesario usar
+git push
+
+COMANDOS DE CONSULTA
+Git permite consultar información del repositorio y del historial de trabajo.
+
+Comandos de consulta
+git log
+git diff
+git remote -v
+
+BUENAS PRACTICAS
+No trabajar directamente sobre la rama main. Usar ramas separadas para nuevas funcionalidades, correcciones o pruebas. Hacer commits pequeños y con mensajes claros. Verificar siempre la rama activa antes de agregar, commitear o mergear cambios. -->

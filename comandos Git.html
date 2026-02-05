@@ -1,0 +1,71 @@
+<!-- APUNTES GIT Y GITHUB – COMANDOS POR ACCIONES
+
+CREAR REPOSITORIO
+git init
+Este comando crea un repositorio Git nuevo en la carpeta actual y comienza a registrar el historial de cambios del proyecto.
+
+CONFIGURAR USUARIO
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com
+"
+Estos comandos configuran el nombre y el correo que quedarán registrados en cada commit.
+
+VER ESTADO DEL PROYECTO
+git status
+Muestra qué archivos fueron modificados, cuáles están listos para confirmar y cuáles no están siendo seguidos por Git.
+
+GUARDAR CAMBIOS (FLUJO NORMAL)
+git add .
+git commit -m "mensaje descriptivo"
+Estos comandos preparan los archivos modificados y crean un commit que guarda una versión del proyecto.
+
+SUBIR CAMBIOS A GITHUB
+git push
+Envía los commits locales al repositorio remoto en GitHub.
+
+SUBIR UNA RAMA POR PRIMERA VEZ
+git push -u origin nombre_rama
+Crea la rama en GitHub y la vincula con la rama local para futuros push simples.
+
+VER HISTORIAL
+git log
+Muestra el historial de commits del proyecto, incluyendo mensajes y autores.
+
+VER DIFERENCIAS
+git diff
+Permite ver los cambios realizados en los archivos antes de confirmarlos en un commit.
+
+TRABAJAR CON RAMAS
+git branch
+Muestra la lista de ramas del repositorio y señala la rama activa.
+
+CREAR RAMA NUEVA
+git switch -c nombre_rama
+Crea una rama nueva y cambia automáticamente a ella para comenzar a trabajar.
+
+CAMBIAR DE RAMA
+git switch nombre_rama
+Cambia el contexto de trabajo a otra rama existente sin mezclar cambios.
+
+MERGEAR RAMAS
+git merge nombre_rama_origen
+Trae los cambios de otra rama a la rama actual. Siempre hay que estar parado en la rama que va a recibir los cambios.
+
+BORRAR CAMBIOS ANTES DEL ADD
+git restore nombre_archivo
+Descarta los cambios realizados en un archivo que todavía no fue agregado al staging.
+
+BORRAR CAMBIOS DESPUES DEL ADD SIN COMMIT
+git restore --staged nombre_archivo
+Quita el archivo del staging, dejando el cambio sin confirmar.
+
+DESHACER UN COMMIT
+git revert hash_del_commit
+Crea un nuevo commit que revierte los cambios de un commit anterior sin borrar el historial.
+
+VER REMOTOS CONFIGURADOS
+git remote -v
+Muestra los repositorios remotos asociados al proyecto, como GitHub.
+
+BUENAS PRACTICAS
+Siempre verificar la rama activa antes de trabajar. No trabajar directamente sobre main. Usar ramas separadas para funcionalidades, pruebas y correcciones. Hacer commits pequeños y con mensajes claros que expliquen qué se cambió. -->
